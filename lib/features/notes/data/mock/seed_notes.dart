@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 
-import '../models/note_model.dart';
+import 'package:offline_items_app/features/notes/data/models/note_model.dart';
 
 /// Mock data: the five notes the mock server starts with on first launch.
 ///

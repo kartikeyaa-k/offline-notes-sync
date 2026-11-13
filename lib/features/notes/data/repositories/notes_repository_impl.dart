@@ -1,14 +1,13 @@
 import 'package:core/core.dart';
+import 'package:offline_items_app/features/notes/data/datasources/notes_sync_data_source.dart';
+import 'package:offline_items_app/features/notes/data/models/note_conflict_model.dart';
+import 'package:offline_items_app/features/notes/data/models/note_model.dart';
+import 'package:offline_items_app/features/notes/data/models/sync_overview_model.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note_conflict.dart';
+import 'package:offline_items_app/features/notes/domain/entities/sync_overview.dart';
+import 'package:offline_items_app/features/notes/domain/repositories/notes_repository.dart';
 import 'package:uuid/uuid.dart';
-
-import '../../domain/entities/note.dart';
-import '../../domain/entities/note_conflict.dart';
-import '../../domain/entities/sync_overview.dart';
-import '../../domain/repositories/notes_repository.dart';
-import '../datasources/notes_sync_data_source.dart';
-import '../models/note_conflict_model.dart';
-import '../models/note_model.dart';
-import '../models/sync_overview_model.dart';
 
 /// Offline-first [NotesRepository].
 ///

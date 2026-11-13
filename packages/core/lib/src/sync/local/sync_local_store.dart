@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 
-import '../../storage/key_value_store.dart';
-import '../conflict_log_entry.dart';
-import '../outbox_entry.dart';
-import '../sync_record.dart';
+import 'package:core/src/storage/key_value_store.dart';
+import 'package:core/src/sync/conflict_log_entry.dart';
+import 'package:core/src/sync/outbox_entry.dart';
+import 'package:core/src/sync/sync_record.dart';
 
 /// One atomic set of changes to the local store.
 ///

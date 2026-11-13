@@ -47,13 +47,15 @@ void main() {
 
   setUp(() {
     repository = MockNotesRepository();
-    notes = StreamController<List<Note>>();
+    notes = StreamController<List<Note>>.broadcast();
     when(() => repository.watchNotes()).thenAnswer((_) => notes.stream);
     when(() => repository.watchSyncOverview())
         .thenAnswer((_) => const Stream<SyncOverview>.empty());
     when(() => repository.watchConflicts())
         .thenAnswer((_) => const Stream<List<NoteConflict>>.empty());
   });
+
+  tearDown(() => notes.close());
 
   blocTest<NotesCubit, NotesState>(
     'emits ready with notes from the local stream',

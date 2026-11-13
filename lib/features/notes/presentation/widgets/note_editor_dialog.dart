@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/note.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
 
 /// Callback that saves the editor's content. Returns `true` when saved, so
 /// the dialog can stay open (keeping the user's text) on a failure.
@@ -9,8 +9,8 @@ typedef SaveNote = Future<bool> Function(String title, String body);
 /// Shows the note editor. [note] is `null` when creating.
 Future<void> showNoteEditor(
   BuildContext context, {
-  Note? note,
   required SaveNote onSave,
+  Note? note,
 }) => showDialog<void>(
   context: context,
   builder: (_) => _NoteEditorDialog(note: note, onSave: onSave),

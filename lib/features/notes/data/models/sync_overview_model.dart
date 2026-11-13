@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 
-import '../../domain/entities/sync_overview.dart';
+import 'package:offline_items_app/features/notes/domain/entities/sync_overview.dart';
 
 /// Maps the engine's [SyncStatus] to the domain's [SyncOverview].
 class SyncOverviewModel {

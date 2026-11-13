@@ -42,17 +42,14 @@ void main() {
         body: 'Milk, eggs',
       ),
     );
-    verify(
-      () => repository.updateNote(id: 'n1', title: null, body: 'Milk, eggs'),
-    ).called(1);
+    verify(() => repository.updateNote(id: 'n1', body: 'Milk, eggs')).called(1);
   });
 
   test('sends only the title when only the title changed (trimmed)', () async {
     await useCase(
       UpdateNoteParams(original: original, title: '  Food  ', body: 'Milk'),
     );
-    verify(() => repository.updateNote(id: 'n1', title: 'Food', body: null))
-        .called(1);
+    verify(() => repository.updateNote(id: 'n1', title: 'Food')).called(1);
   });
 
   test('does not write anything when nothing changed', () async {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-import 'demo/sync_playground_screen.dart';
+import 'package:offline_items_app/app/demo/sync_playground_screen.dart';
 
 /// Root widget.
 class OfflineNotesApp extends StatelessWidget {
-  const OfflineNotesApp({super.key, required this.root});
+  const OfflineNotesApp({required this.root, super.key});
 
   /// Root dependency container.
   final GetIt root;

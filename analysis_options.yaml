@@ -1,16 +1,22 @@
-# This file configures the analyzer, which statically analyzes Dart code to
-# check for errors, warnings, and lints.
-#
-# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
-# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
-# invoked from the command line by running `flutter analyze`.
+# Lint rules for offline_items_app (app + packages/core).
+# Based on my standard Flutter lint setup used across production apps.
+# Run: flutter analyze  |  auto-fix: dart fix --apply
 
-# The following line activates a set of recommended lints for Flutter apps,
-# packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
+  language:
+    strict-casts: true        # no implicit casts from dynamic
+    strict-inference: true    # no silent `dynamic` when a type can't be inferred
+    strict-raw-types: true    # no raw generics like `List` / `Future`
+  errors:
+    missing_required_param: error
+    missing_return: error
+    unawaited_futures: warning
+    todo: ignore
   exclude:
+    - '**/*.freezed.dart'
+    - '**/*.g.dart'
     - build/**
     - android/**
     - ios/**
@@ -20,19 +26,113 @@ analyzer:
     - linux/**
 
 linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at https://dart.dev/lints.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    # --- Type safety ---
+    - always_declare_return_types
+    - type_annotate_public_apis
+    - avoid_dynamic_calls
+    - avoid_annotating_with_dynamic
+    - cast_nullable_to_non_nullable
+    - null_check_on_nullable_type_parameter
+    - unnecessary_null_checks
+    - collection_methods_unrelated_type
+    - unrelated_type_equality_checks
+    - test_types_in_equals
+    - hash_and_equals
+    - avoid_equals_and_hash_code_on_mutable_classes
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+    # --- Async correctness (critical for the sync engine) ---
+    - unawaited_futures
+    - discarded_futures
+    - avoid_void_async
+    - await_only_futures
+    - use_build_context_synchronously
+    - avoid_slow_async_io
+
+    # --- Resource leaks (streams, connectivity listeners) ---
+    - cancel_subscriptions
+    - close_sinks
+
+    # --- Error handling ---
+    - avoid_catching_errors
+    - empty_catches
+    - only_throw_errors
+    - use_rethrow_when_possible
+    - control_flow_in_finally
+    - throw_in_finally
+
+    # --- State / sealed classes ---
+    - exhaustive_cases
+    - no_duplicate_case_values
+    - use_enums
+
+    # --- Immutability ---
+    - prefer_final_fields
+    - prefer_final_locals
+    - prefer_final_in_for_each
+    - parameter_assignments
+    - avoid_implementing_value_types
+
+    # --- Performance (fewer rebuilds) ---
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_declarations
+    - prefer_const_literals_to_create_immutables
+    - avoid_unnecessary_containers
+    - sized_box_for_whitespace
+    - use_colored_box
+    - use_decorated_box
+    - use_string_buffers
+
+    # --- Flutter widgets ---
+    - use_key_in_widget_constructors
+    - no_logic_in_create_state
+    - sort_child_properties_last
+    - use_super_parameters
+
+    # --- Modules / imports (app <-> core package) ---
+    - always_use_package_imports
+    - avoid_relative_lib_imports
+    - implementation_imports
+    - depend_on_referenced_packages
+    - directives_ordering
+    - sort_pub_dependencies
+    - secure_pubspec_urls
+
+    # --- API design ---
+    - always_put_required_named_parameters_first
+    - avoid_positional_boolean_parameters
+    - avoid_unused_constructor_parameters
+    - avoid_setters_without_getters
+    - library_private_types_in_public_api
+    - provide_deprecation_message
+
+    # --- Readability / style ---
+    - avoid_print
+    - curly_braces_in_flow_control_structures
+    - prefer_single_quotes
+    - prefer_if_null_operators
+    - prefer_null_aware_operators
+    - prefer_null_aware_method_calls
+    - prefer_conditional_assignment
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_contains
+    - prefer_spread_collections
+    - prefer_collection_literals
+    - prefer_if_elements_to_conditional_expressions
+    - prefer_interpolation_to_compose_strings
+    - avoid_bool_literals_in_conditional_expressions
+    - no_literal_bool_comparisons
+    - avoid_multiple_declarations_per_line
+    - avoid_init_to_null
+    - avoid_redundant_argument_values
+    - omit_local_variable_types
+    - unnecessary_lambdas
+    - unnecessary_late
+    - unnecessary_parenthesis
+    - unnecessary_statements
+    - unnecessary_string_interpolations
+    - unnecessary_this
+    - use_named_constants
+    - eol_at_end_of_file

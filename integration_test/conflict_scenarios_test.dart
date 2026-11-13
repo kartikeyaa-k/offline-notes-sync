@@ -44,7 +44,7 @@ void main() {
     final h = _DemoDriver(tester, caption);
 
     // The scenarios need the wide side-by-side layout (both devices visible).
-    await h.wait(beats: 1);
+    await h.wait();
     expect(
       find.byType(DevicePanel),
       findsNWidgets(2),

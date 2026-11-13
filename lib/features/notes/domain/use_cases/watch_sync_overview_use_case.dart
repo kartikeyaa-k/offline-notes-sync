@@ -1,7 +1,7 @@
 import 'package:core/domain.dart';
 
-import '../entities/sync_overview.dart';
-import '../repositories/notes_repository.dart';
+import 'package:offline_items_app/features/notes/domain/entities/sync_overview.dart';
+import 'package:offline_items_app/features/notes/domain/repositories/notes_repository.dart';
 
 /// Streams the sync status.
 class WatchSyncOverviewUseCase extends StreamUseCase<SyncOverview, NoParams> {

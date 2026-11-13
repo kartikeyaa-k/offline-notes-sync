@@ -1,20 +1,19 @@
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:core/src/clock/hlc.dart';
+import 'package:core/src/clock/hlc_clock.dart';
+import 'package:core/src/connectivity/connectivity_service.dart';
+import 'package:core/src/sync/conflict_log_entry.dart';
+import 'package:core/src/sync/field_conflict.dart';
+import 'package:core/src/sync/local/sync_local_store.dart';
+import 'package:core/src/sync/lww_merger.dart';
+import 'package:core/src/sync/outbox_entry.dart';
+import 'package:core/src/sync/remote/sync_remote_gateway.dart';
+import 'package:core/src/sync/sync_record.dart';
+import 'package:core/src/sync/sync_status.dart';
+import 'package:core/src/utils/async_lock.dart';
 import 'package:uuid/uuid.dart';
-
-import '../clock/hlc.dart';
-import '../clock/hlc_clock.dart';
-import '../connectivity/connectivity_service.dart';
-import '../utils/async_lock.dart';
-import 'conflict_log_entry.dart';
-import 'field_conflict.dart';
-import 'local/sync_local_store.dart';
-import 'lww_merger.dart';
-import 'outbox_entry.dart';
-import 'remote/sync_remote_gateway.dart';
-import 'sync_record.dart';
-import 'sync_status.dart';
 
 /// A record as the device currently sees it, plus whether it has unsynced
 /// local changes.

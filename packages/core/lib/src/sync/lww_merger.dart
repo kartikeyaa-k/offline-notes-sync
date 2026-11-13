@@ -1,5 +1,5 @@
-import '../clock/hlc.dart';
-import 'sync_record.dart';
+import 'package:core/src/clock/hlc.dart';
+import 'package:core/src/sync/sync_record.dart';
 
 /// The conflict-resolution rule of the whole system:
 /// **per-field Last-Writer-Wins (LWW), where "last" means the latest *edit*

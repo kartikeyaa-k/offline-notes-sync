@@ -1,5 +1,5 @@
-import 'field_conflict.dart';
-import 'sync_record.dart';
+import 'package:core/src/sync/field_conflict.dart';
+import 'package:core/src/sync/sync_record.dart';
 
 /// A persisted, human-auditable record of a conflict this device was part of.
 ///

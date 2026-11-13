@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/sync_overview.dart';
-import 'formatting.dart';
+import 'package:offline_items_app/features/notes/domain/entities/sync_overview.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/formatting.dart';
 
 /// A one-line banner under the app bar telling the user whether their edits
 /// are safe and synced, queued offline, or syncing right now.
 class SyncStatusBanner extends StatelessWidget {
   const SyncStatusBanner({
-    super.key,
     required this.overview,
     required this.onSyncNow,
+    super.key,
   });
 
   /// Current sync state.

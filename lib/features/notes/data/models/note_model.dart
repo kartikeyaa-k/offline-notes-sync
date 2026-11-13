@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 
-import '../../domain/entities/note.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
 
 /// Field names of a note inside a `SyncRecord`. Each one is synced and
 /// conflict-resolved independently.

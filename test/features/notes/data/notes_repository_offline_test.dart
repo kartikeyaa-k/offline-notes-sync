@@ -50,7 +50,7 @@ void main() {
   });
 
   test('creating offline succeeds locally, is pending, then syncs', () async {
-    network.setNetworkEnabled(false);
+    network.setNetworkEnabled(enabled: false);
     final created = await repository.createNote(
       title: 'On a plane',
       body: 'No Wi-Fi',
@@ -68,7 +68,7 @@ void main() {
     final offlineSync = await repository.syncNow();
     expect(offlineSync.isFailure, isTrue); // reported, not thrown
 
-    network.setNetworkEnabled(true);
+    network.setNetworkEnabled(enabled: true);
     await engine.syncNow();
     notes = await repository.watchNotes().first;
     expect(notes.first.syncState, NoteSyncState.synced);

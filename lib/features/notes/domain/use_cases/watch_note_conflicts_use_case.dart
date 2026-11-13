@@ -1,7 +1,7 @@
 import 'package:core/domain.dart';
 
-import '../entities/note_conflict.dart';
-import '../repositories/notes_repository.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note_conflict.dart';
+import 'package:offline_items_app/features/notes/domain/repositories/notes_repository.dart';
 
 /// Streams the log of resolved conflicts.
 class WatchNoteConflictsUseCase

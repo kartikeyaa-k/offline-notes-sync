@@ -2,10 +2,9 @@ import 'package:core/mock_server.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-
-import '../../../features/notes/data/mock/seed_notes.dart';
-import '../../../features/notes/data/models/note_model.dart';
-import '../../di/device_scope.dart';
+import 'package:offline_items_app/app/di/device_scope.dart';
+import 'package:offline_items_app/features/notes/data/mock/seed_notes.dart';
+import 'package:offline_items_app/features/notes/data/models/note_model.dart';
 
 /// The two simulated devices of the demo.
 const demoDevices = [

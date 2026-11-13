@@ -30,8 +30,8 @@ class DeviceNetworkCubit extends Cubit<DeviceNetworkState> {
   late final StreamSubscription<bool> _subscription;
 
   /// Turns the simulated network on or off.
-  void setNetwork(bool on) {
-    _network.setNetworkEnabled(on);
+  void setNetwork({required bool on}) {
+    _network.setNetworkEnabled(enabled: on);
     _refresh();
   }
 

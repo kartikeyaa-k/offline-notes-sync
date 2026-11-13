@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-import 'app/app.dart';
-import 'app/di/app_dependencies.dart';
+import 'package:offline_items_app/app/app.dart';
+import 'package:offline_items_app/app/di/app_dependencies.dart';
 
 /// Entry point.
 ///
@@ -9,11 +9,6 @@ import 'app/di/app_dependencies.dart';
 /// and drive connectivity only with the demo's per-device switches.
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final root = await AppDependencies.init(
-    useRealConnectivity: const bool.fromEnvironment(
-      'REAL_NETWORK',
-      defaultValue: true,
-    ),
-  );
+  final root = await AppDependencies.init();
   runApp(OfflineNotesApp(root: root));
 }

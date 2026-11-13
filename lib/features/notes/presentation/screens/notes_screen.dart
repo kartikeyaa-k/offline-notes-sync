@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/entities/sync_overview.dart';
-import '../bloc/notes_cubit.dart';
-import '../bloc/notes_state.dart';
-import '../widgets/conflict_history_sheet.dart';
-import '../widgets/formatting.dart';
-import '../widgets/note_editor_dialog.dart';
-import '../widgets/note_tile.dart';
-import '../widgets/sync_status_banner.dart';
+import 'package:offline_items_app/features/notes/domain/entities/sync_overview.dart';
+import 'package:offline_items_app/features/notes/presentation/bloc/notes_cubit.dart';
+import 'package:offline_items_app/features/notes/presentation/bloc/notes_state.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/conflict_history_sheet.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/formatting.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/note_editor_dialog.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/note_tile.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/sync_status_banner.dart';
 
 /// The list of editable notes for one device.
 ///
@@ -18,8 +18,8 @@ import '../widgets/sync_status_banner.dart';
 /// independently.
 class NotesScreen extends StatelessWidget {
   const NotesScreen({
-    super.key,
     required this.createCubit,
+    super.key,
     this.title = 'Notes',
     this.appBarActions = const [],
     this.deviceName = rawDeviceName,

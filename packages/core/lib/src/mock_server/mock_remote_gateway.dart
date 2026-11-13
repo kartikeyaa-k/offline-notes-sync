@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import '../connectivity/connectivity_service.dart';
-import '../sync/remote/sync_remote_gateway.dart';
-import 'mock_sync_server.dart';
+import 'package:core/src/connectivity/connectivity_service.dart';
+import 'package:core/src/mock_server/mock_sync_server.dart';
+import 'package:core/src/sync/remote/sync_remote_gateway.dart';
 
 /// A [SyncRemoteGateway] that talks to an in-process [MockSyncServer] while
 /// simulating a real network:

@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 
-import '../clock/hlc.dart';
+import 'package:core/src/clock/hlc.dart';
+import 'package:meta/meta.dart';
 
 /// The generic, feature-agnostic unit of synchronisation.
 ///
@@ -21,6 +22,7 @@ import '../clock/hlc.dart';
 ///
 /// Field values must be JSON (JavaScript Object Notation)-safe: `String`,
 /// `num`, `bool`, `null`, or lists/maps of those.
+@immutable
 class SyncRecord {
   const SyncRecord({
     required this.id,

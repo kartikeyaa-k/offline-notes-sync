@@ -1,6 +1,6 @@
-import '../../clock/hlc.dart';
-import '../field_conflict.dart';
-import '../sync_record.dart';
+import 'package:core/src/clock/hlc.dart';
+import 'package:core/src/sync/field_conflict.dart';
+import 'package:core/src/sync/sync_record.dart';
 
 /// The contract between a device and the sync backend, for one collection
 /// (for example `notes`).

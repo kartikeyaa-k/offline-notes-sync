@@ -1,6 +1,6 @@
 import 'package:core/domain.dart';
 
-import '../../entities/note.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
 
 /// Parameters for `CreateNoteUseCase`.
 class CreateNoteParams extends UseCaseParams {

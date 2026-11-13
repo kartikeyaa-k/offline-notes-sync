@@ -103,7 +103,7 @@ class SimulatedConnectivityService implements ConnectivityService {
   bool get networkEnabled => _networkEnabled;
 
   /// Flips the manual switch (the demo's "Wi-Fi" toggle).
-  void setNetworkEnabled(bool enabled) {
+  void setNetworkEnabled({required bool enabled}) {
     _networkEnabled = enabled;
     _emitIfChanged();
   }

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../features/notes/presentation/screens/notes_screen.dart';
-import '../../di/device_scope.dart';
-import '../bloc/demo_session_cubit.dart';
-import '../bloc/device_network_cubit.dart';
+import 'package:offline_items_app/app/demo/bloc/demo_session_cubit.dart';
+import 'package:offline_items_app/app/demo/bloc/device_network_cubit.dart';
+import 'package:offline_items_app/app/di/device_scope.dart';
+import 'package:offline_items_app/features/notes/presentation/screens/notes_screen.dart';
 
 /// One simulated device: a coloured frame around a regular [NotesScreen],
 /// with a Wi-Fi switch in its app bar to take this device offline.
 class DevicePanel extends StatelessWidget {
-  const DevicePanel({super.key, required this.device});
+  const DevicePanel({required this.device, super.key});
 
   /// The device to show.
   final DeviceScope device;
@@ -54,7 +53,8 @@ class _NetworkSwitch extends StatelessWidget {
               Text(label, style: Theme.of(context).textTheme.labelMedium),
               Switch(
                 value: state.switchOn,
-                onChanged: context.read<DeviceNetworkCubit>().setNetwork,
+                onChanged: (on) =>
+                    context.read<DeviceNetworkCubit>().setNetwork(on: on),
               ),
             ],
           ),

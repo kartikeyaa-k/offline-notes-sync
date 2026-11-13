@@ -1,9 +1,9 @@
 import 'package:core/domain.dart';
 
-import '../entities/note.dart';
-import '../repositories/notes_repository.dart';
-import 'note_validation.dart';
-import 'params/note_params.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
+import 'package:offline_items_app/features/notes/domain/repositories/notes_repository.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/note_validation.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/params/note_params.dart';
 
 /// Creates a note. Works offline: the note is saved locally and synced later.
 class CreateNoteUseCase extends UseCase<Resource<Note>, CreateNoteParams> {

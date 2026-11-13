@@ -1,4 +1,4 @@
-import 'field_conflict.dart';
+import 'package:core/src/sync/field_conflict.dart';
 
 /// What the sync engine is doing right now.
 enum SyncPhase {

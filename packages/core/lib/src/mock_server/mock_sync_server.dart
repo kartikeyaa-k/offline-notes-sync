@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:collection';
 import 'dart:convert';
 
-import '../storage/key_value_store.dart';
-import '../sync/field_conflict.dart';
-import '../sync/lww_merger.dart';
-import '../sync/remote/sync_remote_gateway.dart';
-import '../sync/sync_record.dart';
-import '../utils/async_lock.dart';
+import 'package:core/src/storage/key_value_store.dart';
+import 'package:core/src/sync/field_conflict.dart';
+import 'package:core/src/sync/lww_merger.dart';
+import 'package:core/src/sync/remote/sync_remote_gateway.dart';
+import 'package:core/src/sync/sync_record.dart';
+import 'package:core/src/utils/async_lock.dart';
 
 /// An in-process stand-in for the real sync backend.
 ///

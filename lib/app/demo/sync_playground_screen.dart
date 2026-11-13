@@ -1,11 +1,13 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
-import 'bloc/demo_session_cubit.dart';
-import 'widgets/device_panel.dart';
-import 'widgets/scenario_guide.dart';
-import 'widgets/server_inspector_panel.dart';
+import 'package:offline_items_app/app/demo/bloc/demo_session_cubit.dart';
+import 'package:offline_items_app/app/demo/widgets/device_panel.dart';
+import 'package:offline_items_app/app/demo/widgets/scenario_guide.dart';
+import 'package:offline_items_app/app/demo/widgets/server_inspector_panel.dart';
 
 /// The demo home: two simulated devices and the mock server, side by side on
 /// wide screens or as tabs on phones.
@@ -14,7 +16,7 @@ import 'widgets/server_inspector_panel.dart';
 /// and its own network switch, so you can reproduce "one device offline, one
 /// online, both edit" on a single screen.
 class SyncPlaygroundScreen extends StatelessWidget {
-  const SyncPlaygroundScreen({super.key, required this.root});
+  const SyncPlaygroundScreen({required this.root, super.key});
 
   /// Root dependency container.
   final GetIt root;
@@ -22,7 +24,11 @@ class SyncPlaygroundScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => DemoSessionCubit(root)..start(),
+      create: (_) {
+        final cubit = DemoSessionCubit(root);
+        unawaited(cubit.start());
+        return cubit;
+      },
       child: BlocBuilder<DemoSessionCubit, DemoSessionState>(
         builder: (context, state) => switch (state) {
           DemoSessionLoading() => const Scaffold(
@@ -42,7 +48,7 @@ class SyncPlaygroundScreen extends StatelessWidget {
 }
 
 class _Playground extends StatelessWidget {
-  const _Playground({super.key, required this.panels});
+  const _Playground({required this.panels, super.key});
 
   /// Device A, device B, server.
   final List<Widget> panels;

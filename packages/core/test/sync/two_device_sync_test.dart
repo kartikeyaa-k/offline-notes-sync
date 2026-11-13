@@ -45,10 +45,10 @@ class TestDevice {
   SyncRecord note(String noteId) =>
       engine.records.firstWhere((r) => r.record.id == noteId).record;
 
-  Future<void> goOffline() async => network.setNetworkEnabled(false);
+  Future<void> goOffline() async => network.setNetworkEnabled(enabled: false);
 
   Future<SyncReport> goOnlineAndSync() async {
-    network.setNetworkEnabled(true);
+    network.setNetworkEnabled(enabled: true);
     return engine.syncNow();
   }
 

@@ -1,7 +1,6 @@
 import 'package:core/core.dart';
-
-import '../../domain/entities/note_conflict.dart';
-import 'note_model.dart';
+import 'package:offline_items_app/features/notes/data/models/note_model.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note_conflict.dart';
 
 /// Maps a generic [ConflictLogEntry] from the sync engine to the notes
 /// domain's [NoteConflict].

@@ -3,17 +3,17 @@ import 'dart:async';
 import 'package:core/domain.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/entities/note.dart';
-import '../../domain/entities/note_conflict.dart';
-import '../../domain/use_cases/create_note_use_case.dart';
-import '../../domain/use_cases/delete_note_use_case.dart';
-import '../../domain/use_cases/params/note_params.dart';
-import '../../domain/use_cases/sync_notes_use_case.dart';
-import '../../domain/use_cases/update_note_use_case.dart';
-import '../../domain/use_cases/watch_note_conflicts_use_case.dart';
-import '../../domain/use_cases/watch_notes_use_case.dart';
-import '../../domain/use_cases/watch_sync_overview_use_case.dart';
-import 'notes_state.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note_conflict.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/create_note_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/delete_note_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/params/note_params.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/sync_notes_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/update_note_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/watch_note_conflicts_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/watch_notes_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/watch_sync_overview_use_case.dart';
+import 'package:offline_items_app/features/notes/presentation/bloc/notes_state.dart';
 
 /// State holder for the notes screen.
 ///

@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 
-import '../../domain/entities/note.dart';
-import '../../domain/entities/note_conflict.dart';
-import '../../domain/entities/sync_overview.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note_conflict.dart';
+import 'package:offline_items_app/features/notes/domain/entities/sync_overview.dart';
 
 /// Loading phase of the notes screen.
 enum NotesStatus { loading, ready }

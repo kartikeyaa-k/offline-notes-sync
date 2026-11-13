@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/note.dart';
-import 'formatting.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/formatting.dart';
 
 /// One note in the list: title, a preview of the body, who edited it last,
 /// and a cloud icon showing whether it is synced or still pending.
 class NoteTile extends StatelessWidget {
   const NoteTile({
-    super.key,
     required this.note,
     required this.onTap,
     required this.onDelete,
+    super.key,
     this.deviceName = rawDeviceName,
   });
 

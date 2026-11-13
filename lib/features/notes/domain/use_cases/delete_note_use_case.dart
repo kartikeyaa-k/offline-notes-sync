@@ -1,7 +1,7 @@
 import 'package:core/domain.dart';
 
-import '../repositories/notes_repository.dart';
-import 'params/note_params.dart';
+import 'package:offline_items_app/features/notes/domain/repositories/notes_repository.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/params/note_params.dart';
 
 /// Deletes a note (offline-capable; synced as a tombstone).
 class DeleteNoteUseCase extends UseCase<Resource<void>, DeleteNoteParams> {

@@ -3,17 +3,16 @@ import 'package:core/mock_server.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-
-import '../../../features/notes/data/models/note_model.dart';
-import '../../../features/notes/presentation/widgets/formatting.dart';
-import '../bloc/demo_session_cubit.dart';
-import '../bloc/server_inspector_cubit.dart';
+import 'package:offline_items_app/app/demo/bloc/demo_session_cubit.dart';
+import 'package:offline_items_app/app/demo/bloc/server_inspector_cubit.dart';
+import 'package:offline_items_app/features/notes/data/models/note_model.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/formatting.dart';
 
 /// Read-only view of the mock server's data: each note's server version and,
 /// per field, the value plus *when* and *on which device* it was last edited.
 /// This is the data the conflict rule decides on.
 class ServerInspectorPanel extends StatelessWidget {
-  const ServerInspectorPanel({super.key, required this.root});
+  const ServerInspectorPanel({required this.root, super.key});
 
   /// Root container (holds the [MockSyncServer]).
   final GetIt root;

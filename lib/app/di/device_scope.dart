@@ -3,18 +3,18 @@ import 'package:core/mock_server.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../features/notes/data/datasources/notes_sync_data_source.dart';
-import '../../features/notes/data/models/note_model.dart';
-import '../../features/notes/data/repositories/notes_repository_impl.dart';
-import '../../features/notes/domain/repositories/notes_repository.dart';
-import '../../features/notes/domain/use_cases/create_note_use_case.dart';
-import '../../features/notes/domain/use_cases/delete_note_use_case.dart';
-import '../../features/notes/domain/use_cases/sync_notes_use_case.dart';
-import '../../features/notes/domain/use_cases/update_note_use_case.dart';
-import '../../features/notes/domain/use_cases/watch_note_conflicts_use_case.dart';
-import '../../features/notes/domain/use_cases/watch_notes_use_case.dart';
-import '../../features/notes/domain/use_cases/watch_sync_overview_use_case.dart';
-import '../../features/notes/presentation/bloc/notes_cubit.dart';
+import 'package:offline_items_app/features/notes/data/datasources/notes_sync_data_source.dart';
+import 'package:offline_items_app/features/notes/data/models/note_model.dart';
+import 'package:offline_items_app/features/notes/data/repositories/notes_repository_impl.dart';
+import 'package:offline_items_app/features/notes/domain/repositories/notes_repository.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/create_note_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/delete_note_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/sync_notes_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/update_note_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/watch_note_conflicts_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/watch_notes_use_case.dart';
+import 'package:offline_items_app/features/notes/domain/use_cases/watch_sync_overview_use_case.dart';
+import 'package:offline_items_app/features/notes/presentation/bloc/notes_cubit.dart';
 
 /// Static description of a simulated device.
 class DeviceProfile {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/note_conflict.dart';
-import 'formatting.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note_conflict.dart';
+import 'package:offline_items_app/features/notes/presentation/widgets/formatting.dart';
 
 /// Shows the list of automatically resolved conflicts, each explained in
 /// plain words: what clashed, which edit was newer, which one was kept.

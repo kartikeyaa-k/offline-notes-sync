@@ -2,8 +2,8 @@ import 'package:core/core.dart';
 import 'package:core/mock_server.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../features/notes/data/mock/seed_notes.dart';
-import '../../features/notes/data/models/note_model.dart';
+import 'package:offline_items_app/features/notes/data/mock/seed_notes.dart';
+import 'package:offline_items_app/features/notes/data/models/note_model.dart';
 
 /// App-wide singletons, registered in the root `GetIt` container.
 ///
@@ -36,7 +36,7 @@ abstract final class AppDependencies {
     final store = storage ?? SharedPreferencesKeyValueStore();
     getIt.registerSingleton<KeyValueStore>(store);
 
-    final ConnectivityService connectivity = useRealConnectivity
+    final connectivity = useRealConnectivity
         ? DeviceConnectivityService()
         : SimulatedConnectivityService();
     await connectivity.start();

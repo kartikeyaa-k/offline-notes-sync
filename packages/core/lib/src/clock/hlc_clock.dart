@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'hlc.dart';
+import 'package:core/src/clock/hlc.dart';
 
 /// Produces monotonically increasing [Hlc] (Hybrid Logical Clock) timestamps
 /// for one device.

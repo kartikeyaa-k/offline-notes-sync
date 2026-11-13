@@ -1,3 +1,5 @@
+import 'package:meta/meta.dart';
+
 /// A Hybrid Logical Clock (HLC) timestamp.
 ///
 /// An HLC timestamp combines:
@@ -19,6 +21,7 @@
 /// * When a device receives a remote edit, its clock moves forward past it
 ///   (`HlcClock.observe`), so anything it edits afterwards is ordered after
 ///   what it has already seen (causality is preserved).
+@immutable
 class Hlc implements Comparable<Hlc> {
   const Hlc({
     required this.millis,

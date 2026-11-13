@@ -1,8 +1,8 @@
 import 'package:core/domain.dart';
 
-import '../entities/note.dart';
-import '../entities/note_conflict.dart';
-import '../entities/sync_overview.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note.dart';
+import 'package:offline_items_app/features/notes/domain/entities/note_conflict.dart';
+import 'package:offline_items_app/features/notes/domain/entities/sync_overview.dart';
 
 /// Contract for notes storage and synchronisation.
 ///

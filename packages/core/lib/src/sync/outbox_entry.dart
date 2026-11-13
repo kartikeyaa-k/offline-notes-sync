@@ -1,4 +1,4 @@
-import '../clock/hlc.dart';
+import 'package:core/src/clock/hlc.dart';
 
 /// A pending local change waiting to be pushed to the server.
 ///
